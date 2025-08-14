@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Playing Cards Flip</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <main id="playing-cards">
+
+    <div class="card" onclick="flipCard(this)">
+      <div class="card-inner">
+        <div class="card-front">
+          <div class="left">
+            <span>A</span>
+            <span>♠</span>
+          </div>
+          <div class="middle">
+            <span>♠</span>
+          </div>
+          <div class="right">
+            <span>A</span>
+            <span>♠</span>
+          </div>
+        </div>
+        <div class="card-back">
+          <!-- Conteúdo do verso -->
+          🂠
+        </div>
+      </div>
+    </div>
+
+    <div class="card" onclick="flipCard(this)">
+      <div class="card-inner">
+        <div class="card-front">
+          <div class="left">
+            <span class="heart">3</span>
+            <span class="heart">♥</span>
+          </div>
+          <div class="middle">
+            <span class="heart">♥</span>
+            <span class="heart">♥</span>
+            <span class="heart">♥</span>
+          </div>
+          <div class="right">
+            <span class="heart">3</span>
+            <span class="heart">♥</span>
+          </div>
+        </div>
+        <div class="card-back">
+          🂠
+        </div>
+      </div>
+    </div>
+
+    <div class="card" onclick="flipCard(this)">
+      <div class="card-inner">
+        <div class="card-front">
+          <div class="left">
+            <span>2</span>
+            <span>♦</span>
+          </div>
+          <div class="middle">
+            <span>♦</span>
+            <span>♦</span>
+          </div>
+          <div class="right">
+            <span>2</span>
+            <span>♦</span>
+          </div>
+        </div>
+        <div class="card-back">
+          🂠
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <script>
+    function flipCard(card) {
+    card.classList.toggle('flipped');
+    }
+    </script>
+  
+</body>
+
+</html>

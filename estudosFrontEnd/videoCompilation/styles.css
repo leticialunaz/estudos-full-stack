@@ -1,0 +1,83 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: #cde8e8;
+    color: #000;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+main {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.hero {
+    background-color: #bad8ec;
+    color:rgb(12, 36, 56);
+    padding: 2rem;
+    text-align: center;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+
+}
+
+.cta-button {
+    background-color:rgb(37, 136, 139);
+    color: white;
+    padding: 1rem 2rem;
+    font-size: 01rem;
+    border: none;
+    border-radius: 100px;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.cta-button:hover {
+    background-color: #e04124;
+}
+
+
+section {
+    background-color: white;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 6px;
+    box-shadow: 0 0 6px rgba(0,0,0,0.1);
+}
+
+ol {
+  padding-left: 1.5rem;
+  margin-top: 1rem;
+}
+
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem;
+  color: #777;
+  border-top: 1px solid #ddd;
+  margin-top: 3rem;
+}
+
+footer nav a {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  color: #007acc;
+  text-decoration: none;
+  margin: 0 0.5rem;
+}
+
+footer nav a:hover {
+  text-decoration: underline;
+}
