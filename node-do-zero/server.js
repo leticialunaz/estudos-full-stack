@@ -1,60 +1,61 @@
-//sem utilizar framework
-
-// import { createServer } from 'node:http'
-
-// const server = createServer((request, response) => {
-//     console.log('oi')
-
-//     response.write('que pena que deu errado!!')
-
-//     return response.end()
-    
-// })
-
-// server.listen(3333)
-
-
-//com fastify
-import { readFileSync } from 'fs'
-
-import { join } from 'path'
-
 import { fastify } from "fastify"
+
+import { DatabaseMemory } from './database-memory.js'
 
 const server = fastify()
 
-server.get('/', () => {
-    return 'Hello world'
+const database = new DatabaseMemory()
+
+// POST http://localhost:3333/videos
+// PUT http://localhost:3333/videos/ID
+
+
+//request body
+
+
+
+server.post('/videos', (request, reply) => {
+
+    const { title, description, duration } = request.body
+
+    database.create({
+        title,
+        description,
+        duration,
+    })
+
+
+    return reply.status(201).send()
 })
 
-server.get('/atual', () => {
-    return 'Hello pessoa x'
+server.get('/videos', () => {
+    const videos = database.list()
+
+    console.log(videos)
+
+    return videos
 })
 
-server.get('/html', (request, response) => {
-    response.type('text/html')
-    response.send(`
-        <html>
-            <head>
-                <title>leticias page;p</title>
-            </head>
-            <body>
-                <h1>Deu tudo certo! :) </h1>
-            </body>
-        </html>
-    `)   
+server.put('/videos/:id', (request, reply) => {
+    const videoId = request.params.id 
+    const { title, description, duration } = request.body
 
+    database.update(videoId, {
+        title,
+        description,
+        duration,
+    })
+
+    return reply.status(204).send()
 })
 
+server.delete('/videos/:id', (request, reply) => {
+    const videoId = request.params.id
 
-const cardsHtml = readFileSync(join(process.cwd(), '../estudosFrontEnd/playingCards/cards.html'), 'utf-8')
+    database.delete(videoId)
 
-server.get('/html2', (request, response) => {
-    response.type('text/html')
-    response.send(cardsHtml)   
-
+    return reply.status(204).send()
 })
-
 
 server.listen({
     port: 3333,
