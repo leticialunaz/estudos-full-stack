@@ -1,0 +1,24 @@
+{
+  "name": "fcc-learn-npm-package-json",
+  "dependencies": {
+    "express": "4.14.0"
+  },
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/freeCodeCamp/boilerplate-npm.git"
+  },
+  "description": "This is a study project",
+  "bugs": {
+    "url": "https://github.com/freeCodeCamp/boilerplate-npm/issues"
+  },
+  "homepage": "https://github.com/freeCodeCamp/boilerplate-npm#readme",
+  "version": "1.2.0",
+  "devDependencies": {},
+  "keywords": ["freecodecamp", "studies"],
+  "author": "Letícia Luna Dias Barbosa",
+  "license": "MIT"
+}
