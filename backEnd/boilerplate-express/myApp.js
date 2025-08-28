@@ -28,6 +28,19 @@ app.get('/json', (req, res) => {
 })
 
 
+app.get('/now', (req, res, next) => {
+    req.time = (new Date().toString())
+    next()
+}, (req, res) =>{
+    res.json({time: req.time})
+})
+
+
+app.get('/:word/echo', (req, res, next) => {
+    const word = req.params.word
+    res.json({echo: word})
+})
+
 console.log("Hello World");
 
 
